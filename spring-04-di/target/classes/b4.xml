@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.zji.san.Student">
+        <property name="name" value="杰哥"/>
+        <!-- 普通注入 ,value-->
+
+        <property name="address" ref="address"/>
+        <!-- bean注入, ref-->
+
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>小王子</value>
+            </array>
+        </property>
+        <!-- 数组 -->
+
+        <property name="hobbys">
+            <list>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </list>
+        </property>
+        <!-- List -->
+
+        <property name="card">
+            <map>
+                <entry key="身份证" value="11111111"/>
+                <entry key="银行卡" value="2222222222"/>
+            </map>
+        </property>
+        <!-- map -->
+
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>COC</value>
+            </set>
+        </property>
+        <!-- set -->
+
+        <property name="wife">
+            <null/>
+        </property>
+        <!-- null -->
+
+        <property name="info">
+            <props>
+                <prop key="学号">20190535</prop>
+                <prop key="姓名">zizizi</prop>
+            </props>
+        </property>
+        <!-- properties -->
+
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="address" class="com.zji.san.Address">
+        <property name="address" value="C2"/>
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+    <!-- more bean definitions go here -->
+
+</beans>
